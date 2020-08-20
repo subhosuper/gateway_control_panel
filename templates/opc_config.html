@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Transparent Login Form</title>
+
+</head>
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+        var inputValue = $(this).attr("value");
+        var targetBox = $("." + inputValue);
+        $(".box").not(targetBox).hide();
+        $(targetBox).show();
+    });
+});
+</script>
+
+
+
+
+<body data-spy="scroll" data-target="#menu">
+
+    <div class="headingContainer" >
+        <div class="cover1"> 
+			<div style="padding-left: 120px;font-size: 36px;"><b>CONTROL PANEL</b></div>
+		</div>
+    </div>
+
+
+		<a href="#" class="navbar-brand"><img src="machstatz.png" alt="logo"></a>
+
+
+
+<ul class="topnav">
+  
+  				<li ><a href="#home">Home</a></li>
+				<li ><a href="#about">Gateway Config</a></li>
+				<li ><a href="#portfolio">System configuration</a></li>
+				<li ><a class="active" href="#testimonials">OPC Config</a></li>
+				<li ><a href="#contact">Tag Status</a></li>
+                <li ><a href="#contact">All Status</a></li>
+                <li ><a href="#contact">Endpoint Config</a></li>
+                <li ><a href="#contact">Software Update</a></li>
+  
+  
+  
+</ul>
+
+
+<!--container-->
+<div class="loginContainer">
+	<div class="cover">
+		<h3>OPC Configuration </h3>
+
+		<div>
+			<br>
+			<label class="container" >Local
+				<input type="radio" name="radio" value="local">
+				<span class="checkmark"></span>
+			</label>
+
+
+
+			<label class="container">Remote
+				<input type="radio" checked="checked" name="radio" value="remote">
+				<span class="checkmark"></span>
+			</label> 
+
+			<div class="remote box">
+ 
+				<label for="pname2"><b>IP of OPC Server</b> </label>
+                <input type="text" name="" placeholder="10.18.10.234">
+			</div>						               
+        </div>
+		<div>
+			<button type="connect" onclick="alert('opc server found')"><b>Search OPC server</b></button>
+		</div>
+
+<br>
+
+
+
+
+
+
+        <div class="input" id="ssid"><b>Select OPC server:</b> <br>
+                    
+			<div>
+				<select class="collapsible">
+					<div class="content">
+					  <option>-select-</option>
+					  <option value="single">Single</option>
+					  <option value="multiple">Multiple</option>
+					  <option value="blank"></option>
+					
+                    </div>
+				</select>
+			</div>
+					
+        </div>
+<br>
+		<div>
+			<button type="connect" onclick="alert('save it!')"><b>Save</b></button>
+		</div>
+<br>
+        <div class="input" id="ssid"><b>Upload Tags:</b> <br>
+			Select type tags: 
+						
+			<br>
+			<label class="container">Manual
+				<input type="radio" name="radio" value="first">
+				<span class="checkmark"></span>
+			</label>
+
+
+			<div class="first box">
+ 
+				<textarea rows="4" cols="50" placeholder="Seperate tags with Comma(,)" >
+
+				</textarea>
+<br>
+				<div>
+					<button type="connect" onclick="alert('save')"><b>Update</b></button>  <button type="connect" onclick="alert('save')"><b>Append</b></button>
+				</div>
+
+			</div>
+<br>
+
+			<label class="container">File upload
+				<input type="radio" name="radio" value="second">
+				<span class="checkmark"></span>
+			</label> 
+
+
+			<div class="second box">
+<!-- Choose file -->		
+
+				<input id="fileSelect" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" /> 
+
+	
+			</div>
+               
+
+		</div>
+
+<br>
+	</div>
+</div>
+
+<br><br>
+	
+</body>

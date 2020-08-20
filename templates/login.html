@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href = "{{ url_for('static',filename='styles/style.css') }}">
+        <style>
+         *{
+          margin: 0; padding: 0;
+          font-family: 'Playfair Display', serif;
+         }
+                  .nopadding
+         {
+          padding:10px 5px 10px 0 !important;
+         }
+
+        </style>
+    </head>
+
+<body>
+ 
+    <div class=" jumbotron nopadding" style="margin-bottom:0em;">
+        <div style="float: left">
+        <img class="img-responsive " src="{{ url_for('static',filename='styles/machstatz.png') }}" style="max-width:25vmin;height: auto; padding-top: 5px"> </div>
+        <div class=" text-center"style="font-size: 4vmax; padding-right: 10vmin"><b>CONTROL PANEL</b></div>
+      </div> 
+      
+<!-- navigation-bar -->
+<!-- navigation-bar -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->        
+        </button>
+        <!-- Navbar links -->
+         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active"></a>
+            </li>
+            
+          </ul>
+        </div> 
+      </nav> 
+<!-- navigation-bar-end -->
+<main>
+
+<section class="container my-5">
+  
+ <div class="card card1 shadow p-3 mb-5 bg-white rounded text-justify" style="width: 40vmax;margin-top: 10%;">
+   <div class="card-body">
+    <form method="POST" action="/login">
+  <div class="form-group row text-justify form-inline  ">
+    <label for="inputUsername" class="col-md-4 col-form-label ">Username</label>
+    <div class="col-md-8">
+      <input type="text" class="form-control" id="inputPassword" name="user" placeholder="Username">
+    </div>
+  </div>
+  <div class="form-group row text-justify form-inline ">
+    <label for="inputPassword" class="  col-md-4 col-form-label text-justify">Password</label>
+    <div class="col-md-8">
+      <input type="password" class="form-control" id="inputPassword" name="pass" placeholder="Password">
+    </div>
+  </div>
+
+<div class="text-center">
+  <button type="submit" class="btn btn-dark ">
+   Login 
+  </button>
+
+</div>
+
+</form>
+
+  </div>
+   </div>
+ 
+</section>
+</main>
+
+<!-- Footer -->
+<section style="margin-top: 9%;">
+    <footer>
+        <p class="text-center bg-dark text-light navbar-text col-md-12 col-sm-12 col-xs-12 my-5 " href="https://machstatz.com">support@machstatz.com</p>
+    </footer>
+</section>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</body>
+</html>

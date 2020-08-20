@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>All Status</title>
+  <!-- <link rel="icon" href="/machstatz.png"> -->
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='styles/machstatz.ico') }}" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<body>
+
+  <div class=" jumbotron nopadding" style="margin-bottom:0em;">
+    <div style="float: left">
+      <img class="img-responsive " src="{{ url_for('static',filename='styles/machstatz.png') }}" width="130"
+        style="max-width:30vmin;height: auto; padding-top: 5px"> </div>
+    <div class=" text-center" style="font-size: 4vmax; padding-right: 10vmin"><b>CONTROL PANEL</b></div>
+  </div>
+
+
+  <!-- navigation-bar -->
+  <!-- navigation-bar -->
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+    <a class="navbar-brand navbar-toggler text-light mr-auto" href="#">All Status</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <li class="nav-item borderlist-top-bottom">
+          <a class="nav-link " href="/gateway_conf">Gateway Config</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/system_config">System Config</a>
+        </li>
+        <li class="nav-item borderlist-top-bottom">
+          <a class="nav-link" href="/opc_config">Opc Config</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tag_status">Tag Status</a>
+        </li>
+        <li class="nav-item borderlist-top-bottom">
+          <a class="nav-link active" href="#" data-toggle="collapse" data-target="#collapsibleNavbar">All Status</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="/endpoint_config">Endpoint Config</a>
+        </li>
+        <li class="nav-item borderlist-top-bottom">
+          <a class="nav-link" href="/software_update">Software Update</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-auto">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal1">Reboot</a>
+        </li>
+        <li class="nav-item mr-auto">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal2">Change password</a>
+        </li>
+        <li class="nav-item mr-auto ">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal3">LogOut</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navigation-bar-end -->
+
+  <!-- The Modal for reboot -->
+  <div class="modal fade" id="myModal1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Reboot</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            Do you really want to reboot?<br>
+            <input class="my-4 mx-4" type="checkbox" name="relaunch_application" value="relaunch" checked>Relauch Application<br>
+          <div class="form-check-inline mx-5 my-3">
+              <form action="/logout" method="POST">
+                <input type="button" class="btn btn-dark mx-3" value="Yes">
+              </form>
+  
+              <input type="button" class="btn btn-dark mx-3" data-dismiss="modal" value="No">
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal for change password -->
+  <div class="modal fade" id="myModal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Change password</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <form methods="POST" action='/change_password'>
+          <div class="modal-body">
+            <label>Current Password</label>
+            <div class="form-group pass_show">
+              <input type="password" id="current_password" name="current_password" class="form-control" placeholder="Current Password"/>
+            </div>
+            <label>New Password</label>
+            <div class="form-group pass_show">
+              <input type="password" name="new_password" id="password" class="form-control" placeholder="New Password"/>
+            </div>
+            <label>Confirm Password</label>
+            <div class="form-group pass_show">
+              <input type="password" id="confirm_password" class="form-control" placeholder="Confirm Password"/>
+              <span id='message'></span>
+            </div>
+            <div class="p-3 m-2">
+              <button type="submit" id="btnSubmitDisabled" class="btn btn-dark mx-3" data-dismiss="modal">Save</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal for logout -->
+  <div class="modal fade" id="myModal3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Log Out</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Do you really want to log out?
+          <div class="form-check-inline mx-5 my-3">
+              <form methods="POST" action="/logout">
+                <input type="submit" class="btn btn-dark mx-3" value="Yes">
+              </form>
+  
+              <input type="button" class="btn btn-dark mx-3" data-dismiss="modal" value="No">
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <main>
+    <section class="container my-5 ">
+      <div class="card card1 text-center shadow p-3 mb-5 bg-white rounded container-box-size"
+        style="width: 40vmax;margin-top: 10vmax;">
+        <div class="card-body">
+          <div class="my-3 text-center d-inline-block " style="font-size:1.7rem;">All Status</div>
+          <a href="/static/manual_files/all_status.txt" download="all status.txt">
+          <button class="btn btn-dark fa fa-refresh mx-5" type="submit" style="text-align: center;font-size: 3vmin;">
+            Update</button>
+          </a>
+          <!-- table start -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Tag id</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>speed</td>
+                <td>working</td>
+              </tr>
+              <tr>
+                <td>velocity</td>
+                <td>working</td>
+              </tr>
+              <tr>
+                <td>heat</td>
+                <td>working</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- table end -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+  <!-- Footer -->
+  <section style="margin-top: 9%;">
+    <footer>
+      <p class="text-center bg-dark text-light navbar-text col-md-12 col-sm-12 col-xs-12 my-5 "
+        href="https://machstatz.com">support@machstatz.com</p>
+    </footer>
+  </section>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+
+  <script>
+    $('#password, #confirm_password').on('keyup', function () {
+          if ($('#password').val() != $('#current_password').val() && $('#current_password').val() != $('#confirm_password').val()) {
+            $('#btnSubmitDisabled').attr("disabled", false);
+    
+            if ($('#password').val() == $('#confirm_password').val()) {
+              // $('#message').html('Matching').css('color', 'green');
+              $('#btnSubmitDisabled').attr("disabled", false);
+              $('#message').html('');
+            } else {
+              $('#message').html('Password not matching').css('color', 'red');
+              $("#btnSubmitDisabled").attr("disabled", true);
+              // $('#btnSubmitDisabled').removeAttr("disabled");
+            }
+    
+          } else {
+            $('#btnSubmitDisabled').attr("disabled", true);
+            $('#message').html('Set different password').css('color', 'green');
+    
+          }
+        });
+    </script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

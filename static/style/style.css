@@ -1,0 +1,258 @@
+
+/*wifi option*/
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px; 
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 3px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: auto;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  height: 360px;
+}
+
+/*radio button*/
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  padding-top: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+  border-radius: 100%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+/*button*/
+button {
+	background-color: #e7e7e7;
+	border-radius: 12px;
+	border: 2px solid #e7e7e7;
+	font-size: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+	padding-left:15px;
+	padding-right:10px;
+	
+	}
+button:hover {
+  background-color: 	#C0C0C0;
+}
+
+/*box*/
+
+.loginContainer {
+	position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 600px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+	border-radius:10px;
+}
+.loginContainer:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1.0);
+    background: rgba(255, 255, 255);
+	border-radius:10px;
+}
+.loginContainer input {
+    width: 100%;
+    margin-bottom: 18px;
+	border-radius:10px;
+}
+.loginContainer input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: none;
+    height: 40px;
+    background: transparent;
+    color: #000;
+    font-size: 16px;
+    padding-left: 20px;
+    box-sizing: border-box;
+	border-radius:10px;
+}
+
+/*cover for box*/
+.cover {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: rgb(255, 255, 255, 0.3);
+    transition: 0.5s;
+}
+
+/*cover for header*/
+.cover1 {
+	margin-top:5px;
+	margin-left:105px;
+	position: absolute;
+}
+
+/*control panel*/
+.headingContainer {
+	margin:10px;
+	padding-left:44%;
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2000px;
+	height:68px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+a{
+	padding:5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: 000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: sans-serif;
+		overflow: scroll;
+	}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+
+/*add tab*/
+
+.tab{
+	position:absolute;
+	left:280px;
+	top:100px;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

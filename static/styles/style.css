@@ -1,0 +1,275 @@
+/* updated style sheet */
+
+*{
+  margin: -1px; padding: 0; /*hint:(mobile responsive) margin:0px or -1px  */
+  font-family: 'Playfair Display', serif;
+ }
+  .nopadding
+ {
+  padding:10px 5px 10px 0 !important;
+ }
+
+body {
+    margin: 0;
+    padding: 0;
+    background:000;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+		overflow-x: scroll;
+    overflow-y: scroll;
+    display: block;
+    background: rgb(120, 150, 205, 0.3);
+	}
+main{
+  flex:1;  
+}
+.card1 {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px;
+        display: block; /* Added */
+        
+}
+footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:100px;
+}
+.bg-dark {
+    background-color: #585e63!important;
+}
+
+/* welcome page animation */
+.ml3 {
+  font-weight: 100;
+  font-size: 180%;
+}
+
+.ml5 {
+  position: relative;
+  font-weight: 300;
+  font-size: 4vmax;
+  color: #402d2d;
+}
+
+.ml5 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+  line-height: 1em;
+}
+
+.ml5 .line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 3px;
+  width: 100%;
+  background-color: #402d2d;
+  transform-origin: 0.5 0;
+}
+
+
+
+.ml5 .letters {
+  display: inline-block;
+  opacity: 0;
+  font-weight: 200;
+  
+}
+
+.underlined-a {
+  text-decoration: none;
+  color: aqua;
+  padding-bottom: 0.15em;
+  box-sizing: border-box;
+  box-shadow: inset 0 -0.2em 0 aqua;
+  transition: 0.2s;
+  &:hover {
+    color: #222;
+    box-shadow: inset 0 -2em 0 aqua;
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+}
+
+.brk-btn {
+  position: relative;
+  background: none;
+  color: aqua;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid aqua;
+  padding: 0.5em 1em;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
+}
+/* radio button */
+.display-input .input{
+	display: block ;
+	
+}.hide-input .input{
+	display: none;
+}
+
+.display-input .inputhttp{
+	display: block ;
+	
+}.hide-input .inputhttp{
+	display: none;
+}
+.btn-icon-right {
+  position: absolute;
+  right: 1rem;
+}
+
+
+
+.hide-show-input .input{
+	display: none !important;
+}
+
+.active-input{
+	border: 1.3px dashed #6a7075 !important;
+}
+
+.table-border-0{
+  border: 0;
+  width: 6rem;
+}
+
+.form{
+  margin-top: 5%;
+  background: #B6D1FF;
+  border: 0px solid black;
+  border-radius:10px;
+  box-shadow: 0px 5px 5px 0px;
+  padding-bottom: 0%;
+  
+}
+
+
+/* welcome page animation end */
+
+
+
+
+
+
+
+@media only screen and (max-width : 360px) {
+  .btn-icon-right {
+    right: 5px;
+  }
+}
+
+/* For 1366 Resolution laptop-view*/  
+@media only screen   
+and (min-device-width: 768px)   
+and (max-device-width: 1024px)  
+{ /* STYLES GO HERE */
+  .container-box-size-lg{
+    width: 70rem !important;
+  }
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+.container-box-size-lg-tag{
+  width: 60rem !important;
+}
+}
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (orientation:landscape){
+/* Styles */
+.container-box-size{
+  width: 36rem !important;
+}
+
+.text-box-right{
+  margin-left: 2rem;
+}
+
+}
+
+/* For 1024 Resolution mobile-view*/  
+ @media only screen   
+ and (min-device-width : 320px)   
+ and (max-device-width : 480px)   
+{ /* STYLES GO HERE */
+/* nav bar .underlined */
+.borderlist {
+  list-style-position:inside;
+  border-bottom: 1px solid gray;
+}
+.borderlist-top-bottom{
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+}
+}
+
+
+/* change password */
+.pass_show{position: relative} 
+
+.pass_show .ptxt { 
+
+position: absolute; 
+
+top: 50%; 
+
+right: 10px; 
+
+z-index: 1; 
+
+color: #f36c01; 
+
+margin-top: -10px; 
+
+cursor: pointer; 
+
+transition: .3s ease all; 
+
+} 
+
+.pass_show .ptxt:hover{color: #333333;} 
+

@@ -1,0 +1,3 @@
+import subprocess
+def reboot():
+    
