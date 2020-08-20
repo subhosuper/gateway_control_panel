@@ -1,4 +1,4 @@
-# gateway_control_panel
+# Gateway Control Panel
 
 A machine configuration web app that connects to WiFi networks available around it.
 
